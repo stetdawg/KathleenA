@@ -1,26 +1,93 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import reactDOM from 'react-dom';
+import Landing from './components/landing.js';
+import Home from './components/Home.js';
+import Sidebar from './components/Sidebar.js';
+import About from './components/About.js';
+import { Switch, Route, useLocation } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const routes = [
+  {
+    path: "/",
+    exact: true,
+    sidebar: () =><Sidebar/>,
+    main: () => <Home/>
+  },
+  {
+    path: "/Landing",
+    sidebar: () => null,
+    main: () => <Landing/>,
+  },
+  {
+    path: "/About",
+    sidebar: () => <Sidebar navLocation='About'/>,
+    main: () => <About/>,
+  },
+  {
+    path: "/Galleries",
+    sidebar: () => <Sidebar />,
+    main: () => <h2>Shoelaces</h2>
+  },
+  {
+    path: "/Specialties",
+    sidebar: () => <Sidebar />,
+    main: () => <h2>Shoelaces</h2>
+  },
+  {
+    path: "/Events",
+    sidebar: () => <Sidebar />,
+    main: () => <h2>Shoelaces</h2>
+  },
+  {
+    path: "/Blog",
+    sidebar: () => <Sidebar />,
+    main: () => <h2>Shoelaces</h2>
+  },
+];
+
+
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       navLocation: '' , 
+    }
+  }
+  componentDidMount( ){
+    
+  }
+
+stateGetter(location){
+  this.setState({
+    navLocation: location,
+  })
+}
+  render(){          
+
+    return (
+      <div className="App">
+  
+     <Sidebar/>
+   
+      <div className="content">
+        <Switch>
+          {routes.map((route,index,)=>(
+            <Route
+              key={index}
+              path={route.path}
+              exact={route.exact}
+              children={<route.main/>}
+              />
+
+          ))
+          }
+        </Switch>
+      </div>
     </div>
-  );
+    )
+  }
+ 
 }
 
 export default App;

@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+  width: auto;
+  flex-direction: row; }
+
+.content {
+  display: inline-flex;
+  right: 0;
+  left: 25%;
+  flex-direction: column;
+  background-color: #292929;
+  z-index: 1;
+  position: absolute;
+  width: 75%; }

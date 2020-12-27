@@ -1,0 +1,18 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  justify-content: center;
+  align-items: center; }
+  .home #Gallery {
+    display: inline-flex;
+    width: 40vw;
+    flex-wrap: wrap; }
+    .home #Gallery .bx {
+      display: inline-block;
+      width: 10vw;
+      height: fit-content; }
+    .home #Gallery img {
+      display: block;
+      height: auto;
+      width: 100%; }
