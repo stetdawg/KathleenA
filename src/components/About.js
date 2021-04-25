@@ -13,7 +13,6 @@ import React, { Component } from 'react'
         return (
             <div>
                 Yo
-                {console.log(this.props.location)}
             </div>
         )
     }

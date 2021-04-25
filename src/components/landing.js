@@ -1,16 +1,11 @@
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
+import React, { Component as PureComponent } from 'react'
 import '../scss/Landing.scss'
 import video from '../assets/0000-2000.webm'
 import img from '../assets/0000.png'
-import { Route } from 'react-router-dom'
-import Home from './Home'
 
-const some=()=><Route exact path="/">
-    <Home/>
-</Route>
 
-class Landing extends Component { 
+
+class Landing extends PureComponent { 
 constructor(props) {
     super(props)
 

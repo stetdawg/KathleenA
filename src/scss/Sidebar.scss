@@ -4,7 +4,7 @@ $sidebar: 25%;
     z-index: 999;
     display: grid;
     position: fixed;
-    max-width: $sidebar;
+    width: $sidebar;
     align-items: center;
     top: 0;
     left: 0;
@@ -12,15 +12,20 @@ $sidebar: 25%;
     background-color: #B39B70;
     flex: 1 0;
     .logo{
-        
+         g {
+           text{
+             position: relative;
+           }
+         }
     }
-
+  .navBar{
     li {
         list-style-type: none;
         text-align: start;
         display: flex;
         margin: 3% 0;
         font-size: 1.6vw;
+        // animation:2 e 2s ;
 
         a{
             font-family: 
@@ -29,9 +34,42 @@ $sidebar: 25%;
             color: black;
         }
     }
-
+  }
     .bx1{
       font-size: 1vw;
-      width: 100%;
+      width: auto;
+      padding: max(0, 10px);;
+      display: grid;
+      grid-template: "text"
+                     "email"
+                     "name";
+    p {
+      width: auto;
+      border: 1px solid #000;
+      display: inline-block;
     }
+    span{
+      display: flex;
+      flex-direction: column;
+      input{
+ 
+      }}
+      
+    }
+
+}
+
+@keyframes e{
+from {
+  font-size: 1.6vw;
+  filter: blur(0);
+  -webkit-filter: blur(0);
+
+}
+to{
+  font-size: 1vw;
+  filter: blur(40px);
+  -webkit-filter: blur(1px);
+
+}
 }

@@ -10,7 +10,22 @@
 
 #hero{
     width: 100%;
-    max-height: 469px;   
+    max-height: 469px;
+    font-family: perpetua;
+    font-size: xx-large;
+    color: linen;
+    background-color: #B39B70;
+
+    #header1{
+      font-style: italic;
+      font-size: 2em;
+      line-height: 2em;
+    }
+    #header2{
+      line-height: 1.2em;
+
+
+    }
 }
 .bx1{
     flex: 1 auto;
